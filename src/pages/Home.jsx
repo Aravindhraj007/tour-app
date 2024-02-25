@@ -29,13 +29,13 @@ const Home = () => {
       setItems([...data.Placedatas])
     }else if(priceValue!=5000 && locationName){
       const listener = data.Placedatas.filter(item => {
-        return item.location == locationName && priceValue >= item.price ? {...item} : null
+        return item.location.toLocaleLowerCase() == locationName.toLocaleLowerCase() && priceValue >= item.price ? {...item} : null
       })
       setItems(listener)
     }
     else if(locationName){
       const listener = data.Placedatas.filter(item => {
-        return item.location == locationName ? {...item} : null
+        return item.location.toLocaleLowerCase() == locationName.toLocaleLowerCase() ? {...item} : null
       })
       setItems(listener)
     }else if(priceValue!=5000){
@@ -52,6 +52,7 @@ const Home = () => {
 
   useEffect(() => {
     setItems([...data.Placedatas])
+    setLocationName('')
   }, [])
 
   return (
@@ -72,6 +73,7 @@ const Home = () => {
             handleReset={handleReset}
             setLocationName={setLocationName}
             handleSearch = {handleSearch}
+            locationName = {locationName}
           />
         </div>
         <Places 

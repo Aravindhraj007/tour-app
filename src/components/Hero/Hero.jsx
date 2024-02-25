@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = ({priceValue, setPriceValue, handleReset, setLocationName, handleSearch}) => {
+const Hero = ({priceValue, setPriceValue, handleReset, locationName, setLocationName, handleSearch}) => {
  
   return (
     <div className=" bg-black/20 h-full">
@@ -36,6 +36,7 @@ const Hero = ({priceValue, setPriceValue, handleReset, setLocationName, handleSe
                   id="destination"
                   placeholder="Dubai"
                   onChange={e=>setLocationName(e.target.value)}
+                  value={locationName}
                   className="w-full bg-gray-100 my-2 range accent-primary focus:outline-primary focus:outline outline-1 rounded-full p-2"
                 />
               </div>

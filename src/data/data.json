@@ -51,6 +51,32 @@
       "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the river Yamuna in the Indian city of Agra.",
     "price": 10200,
     "type": "Cultural Relax"
+  },
+  {
+    "img": "china.jpg",
+    "title": "Great Wall of China",
+    "location": "China",
+    "description": "The Great Wall of China traditional Chinese: 萬里長城; simplified Chinese: 万里长城; pinyin: Wànlǐ Chángchéng, literally ten thousand li long wall is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe.",
+    "price": 33000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "paris.jpg",
+    "title": "Paris",
+    "location": "France",
+    "description":
+      "Paris French pronunciation is the capital and most populous city of France. With an official estimated population of 2,102,650 residents as of 1 January 2023[2] in an area of more than 105 km2 (41 sq mi),[5] Paris is the fourth-most populated city in the European Union and the 30th most densely populated city in the world in 2022.",
+    "price": 30000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "japan.jpg",
+    "title": "Tokoyo",
+    "location": "Japan",
+    "description":
+      "Japan has over 125 million inhabitants and is the 11th most populous country in the world, as well as one of the most densely populated. About three-fourths of the country's terrain is mountainous, concentrating its highly urbanized population on narrow coastal plains.",
+    "price": 20200,
+    "type": "Cultural Relax"
   }
   ]
 }

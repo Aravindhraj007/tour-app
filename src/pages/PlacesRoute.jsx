@@ -1,5 +1,6 @@
 import React from "react";
 import Places from "../components/Places/Places";
+import data from '../data/data.json'
 
 const PlacesRoute = () => {
   // {priceValue, locationName}
@@ -7,8 +8,7 @@ const PlacesRoute = () => {
     <>
       <div className="pt-14">
         <Places 
-        priceValue={1000}
-        locationName={''}
+          items={data.Placedatas}
         />
       </div>
     </>

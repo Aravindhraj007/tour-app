@@ -10,7 +10,7 @@ const Places = ({items}) => {
           <h1 className=" my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold">
             Best Places to Visit
           </h1>
-          {items.length>0 ?
+          {items.length > 0 ?
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {items.map((item, index) => (
               <PlaceCard
