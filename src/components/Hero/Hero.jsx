@@ -1,12 +1,13 @@
 import React from "react";
 
-const Hero = () => {
-  const [priceValue, setPriceValue] = React.useState(30);
-
+const Hero = ({priceValue, setPriceValue, handleReset, setLocationName, handleSearch}) => {
+ 
   return (
     <div className=" bg-black/20 h-full">
       <div className="h-full flex justify-center items-center p-4 bg-primary/10">
-        <div className="container grid grid-cols-1 gap-4">
+        <form className="container grid grid-cols-1 gap-4"
+          onSubmit={handleSearch}
+        >
           <div className="text-white">
             <p data-aos="fade-up" className="text-sm">
               Our Packages
@@ -34,6 +35,7 @@ const Hero = () => {
                   name="destination"
                   id="destination"
                   placeholder="Dubai"
+                  onChange={e=>setLocationName(e.target.value)}
                   className="w-full bg-gray-100 my-2 range accent-primary focus:outline-primary focus:outline outline-1 rounded-full p-2"
                 />
               </div>
@@ -52,7 +54,7 @@ const Hero = () => {
                 <label htmlFor="destination" className="opacity-70 block">
                   <div className="w-full flex justify-between items-center">
                     <p>Max Price</p>
-                    <p className="font-bold text-xl">$ {priceValue}</p>
+                    <p className="font-bold text-xl">₹ {priceValue}</p>
                   </div>
                 </label>
                 <div className=" bg-gray-100 rounded-full p-2 flex items-center justify-center ">
@@ -61,20 +63,26 @@ const Hero = () => {
                     name="destination"
                     id="destination"
                     className="appearance-none w-full bg-gradient-to-r from-primary to-secondary h-2 rounded-full my-2"
-                    min="150"
-                    max="1000"
+                    min="5000"
+                    max="50000"
                     value={priceValue}
-                    step="10"
+                    step="1000"
                     onChange={(e) => setPriceValue(e.target.value)}
                   />
                 </div>
               </div>
             </div>
-            <button className="bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 px-4 py-2 rounded-full duration-200 absolute -bottom-5 left-1/2 -translate-x-1/2">
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2">
+              <button className="bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 px-4 py-2 rounded-full duration-200 mr-20"
+                onClick={handleReset}
+              >
+              Reset</button>
+            <button type="submit" className="bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 px-4 py-2 rounded-full duration-200 ">
               Search Now
             </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

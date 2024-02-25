@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
+import { OrderContext } from "../../context/OrderContext";
 
 const PlaceCard = ({
   img,
@@ -8,17 +9,23 @@ const PlaceCard = ({
   description,
   price,
   type,
-  handleOrderPopup,
 }) => {
+
+  const {clickBookTour} = useContext(OrderContext)
+ 
+  const handleClick = () => {
+    clickBookTour(location, price);
+  }
+  
   return (
     <>
       <div
         className="shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950 dark:text-white cursor-pointer"
-        onClick={handleOrderPopup}
+        onClick={handleClick}
       >
         <div className="overflow-hidden">
           <img
-            src={img}
+            src={`/places/${img}`}
             alt="No image"
             className="mx-auto h-[220px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110"
           />
@@ -36,11 +43,13 @@ const PlaceCard = ({
               <p>{type}</p>
             </div>
             <div>
-              <p className="text-2xl font-bold">${price}</p>
-            </div>
+              <p className="text-2xl font-bold">₹{price}</p>
+            </div>            
           </div>
+          
         </div>
       </div>
+      {/* <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} /> */}
     </>
   );
 };

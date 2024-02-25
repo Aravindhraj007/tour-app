@@ -2,10 +2,14 @@ import React from "react";
 import Places from "../components/Places/Places";
 
 const PlacesRoute = () => {
+  // {priceValue, locationName}
   return (
     <>
       <div className="pt-14">
-        <Places />
+        <Places 
+        priceValue={1000}
+        locationName={''}
+        />
       </div>
     </>
   );

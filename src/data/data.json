@@ -1,0 +1,56 @@
+{
+  "Placedatas": [
+  {
+    "img": "boat.jpg",
+    "title": "Boat",
+    "location": "USA",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+    "price": 20000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "tajmahal.jpg",
+    "title": "Taj Mahal",
+    "location": "India",
+    "description":
+      "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the river Yamuna in the Indian city of Agra.",
+    "price": 37000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "water.jpg",
+    "title": "Underwater",
+    "location": "US",
+    "description":
+      "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the river Yamuna in the Indian city of Agra.",
+    "price": 35000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "place4.jpg",
+    "title": "Sydney",
+    "location": "USA",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "price": 40000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "place5.jpg",
+    "title": "Los Angeles",
+    "location": "United states",
+    "description":
+      "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the river Yamuna in the Indian city of Agra.",
+    "price": 25000,
+    "type": "Cultural Relax"
+  },
+  {
+    "img": "place6.jpg",
+    "title": "Los Vegas",
+    "location": "California",
+    "description":
+      "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the river Yamuna in the Indian city of Agra.",
+    "price": 10200,
+    "type": "Cultural Relax"
+  }
+  ]
+}

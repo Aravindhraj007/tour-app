@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Hero from "../components/Hero/Hero";
 import NatureVid from "../assets/video/main.mp4";
 import BlogsComp from "../components/Blogs/BlogsComp";
@@ -8,14 +8,52 @@ import Banner from "../components/Banner/Banner";
 import BannerPic from "../components/BannerPic/BannerPic";
 import BannerImg from "../assets/cover-women.jpg";
 import Banner2 from "../assets/travel-cover2.jpg";
-import OrderPopup from "../components/OrderPopup/OrderPopup";
+import data from '../data/data.json'
 
 const Home = () => {
-  const [orderPopup, setOrderPopup] = React.useState(false);
+  const [priceValue, setPriceValue] = React.useState(5000);
+  const [locationName, setLocationName] = React.useState('');
+  const [items, setItems] = React.useState([])
 
-  const handleOrderPopup = () => {
-    setOrderPopup(!orderPopup);
-  };
+  const handleReset = () => {
+    setPriceValue(5000)
+    setLocationName('')
+    setItems([...data.Placedatas])
+  }
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    console.log(priceValue, locationName)
+
+    if(!(priceValue!=5000) && !locationName){
+      setItems([...data.Placedatas])
+    }else if(priceValue!=5000 && locationName){
+      const listener = data.Placedatas.filter(item => {
+        return item.location == locationName && priceValue >= item.price ? {...item} : null
+      })
+      setItems(listener)
+    }
+    else if(locationName){
+      const listener = data.Placedatas.filter(item => {
+        return item.location == locationName ? {...item} : null
+      })
+      setItems(listener)
+    }else if(priceValue!=5000){
+      const listener = data.Placedatas.filter(item => {
+        return priceValue >= item.price ? {...item} : null
+      })
+      setItems(listener)
+    }
+    else{
+      setItems([])
+    }
+    return
+  }
+
+  useEffect(() => {
+    setItems([...data.Placedatas])
+  }, [])
+
   return (
     <>
       <div>
@@ -28,15 +66,22 @@ const Home = () => {
           >
             <source src={NatureVid} type="video/mp4" />
           </video>
-          <Hero />
+          <Hero 
+            priceValue={priceValue}
+            setPriceValue={setPriceValue}
+            handleReset={handleReset}
+            setLocationName={setLocationName}
+            handleSearch = {handleSearch}
+          />
         </div>
-        <Places handleOrderPopup={handleOrderPopup} />
+        <Places 
+          items={items}
+        />
         <BannerPic img={BannerImg} />
         <BlogsComp />
         <Banner />
         <BannerPic img={Banner2} />
         <Testimonial />
-        <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
       </div>
     </>
   );

@@ -10,6 +10,7 @@ import About from "./pages/About";
 import BlogsDetails from "./pages/BlogsDetails";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import OrderPage from "./pages/OrderPage";
 
 const App = () => {
   React.useEffect(() => {
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="blogs/:id" element={<BlogsDetails />} />
             <Route path="best-places" element={<PlacesRoute />} />
             <Route path="about" element={<About />} />
+            <Route path="order" element={<OrderPage />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
